@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "projeto crud"
+version = "0.1.0"
+description = "Utilizando POO, criar um projeto de CRUD, sem auxílio de bibliotecas externas (ou bibliotecas/tecnologias que já tenham CRUD implementado)"
+authors = ["NicolasSP90 <nicolassp90@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.*"
+ipykernel = "^6.29.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

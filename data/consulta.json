@@ -1,0 +1,46 @@
+{
+    "1": {
+        "instituicao": "1A.1A1.A1A/AA11-99", 
+        "medico": "11111", 
+        "paciente": "111.111.111-11", 
+        "sintomas": "Dor de cabeça, febre, dor no corpo",
+        "descricao": "Paciente relatou dor de cabeça, febre baixa e dores leves no corpo. Por conta do quadro apresentado será tratado como gripe. Em caso de febre, tomar paracetamol a cada 8 horas",
+        "enfermidade": "Gripe",
+        "prescricao": "Paracetamol 500mg"},
+
+    "2": {
+        "instituicao": "1A.1A1.A1A/AA11-99", 
+        "medico": "11111", 
+        "paciente": "111.111.111-11", 
+        "sintomas": "Dor de cabeça, febre, dor no corpo",
+        "descricao": "Paciente relatou aumento na dor de cabeça e febre baixa. Dores no corpo aumentaram e perdeu o olfato. Por conta do quadro apresentado será tratado como COVID. Utilizar tamiflu gotas a cada 6 horas, 10 gotas",
+        "enfermidade": "COVID",
+        "prescricao": "Tamiflu gotas"},
+
+    "3": {
+        "instituicao": "1A.1A1.A1A/AA11-99", 
+        "medico": "22222", 
+        "paciente": "222.222.222-22", 
+        "sintomas": "Dor no peito, tosse",
+        "descricao": "Paciente relata dores na altura do pulmão, tosses constantes. Etapa terminal",
+        "enfermidade": "Câncer",
+        "prescricao": "Nenhuma"},
+
+    "4": {
+        "instituicao": "2A.2A2.A2A/AA22-99", 
+        "medico": "33333", 
+        "paciente": "333.333.333-33", 
+        "sintomas": "Dor no corpo",
+        "descricao": "Paciente relatou dores no corpo após atividades físicas",
+        "enfermidade": "Nenhuma",
+        "prescricao": "Atividades físicas regulares"},
+    
+    "5": {
+        "instituicao": "2A.2A2.A2A/AA22-99", 
+        "medico": "44444", 
+        "paciente": "444.444.444-44", 
+        "sintomas": "Dor no corpo, febre, vômitos, diarréia",
+        "descricao": "Paciente relata que os sintomas iniciaram a poucos dias, quando as temperaturas aumentaram. Prescrito paracetamol XXXg e Dragin Xg",
+        "enfermidade": "Dengue",
+        "prescricao": "Paracetamol, Dramin"}
+}
