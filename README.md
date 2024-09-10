@@ -165,7 +165,7 @@ Primeiro menu da aplicação.
 
 Segundo menu da aplicação. O nome da instituição deve aparecer no lugar de "MENU"
 
-1, 2, 3, 4- Define o tipo de objeto a ser trabalhado [Menu Objetos](#menu-objetos).
+1, 2, 3, 4- Define o tipo de objeto a ser trabalhado. Mais detalhes em: [Menu Objetos](#menu-objetos).
 
 0- Faz o "logoff". O nome do menu volta para o original ("MENU").
 
@@ -173,12 +173,12 @@ Segundo menu da aplicação. O nome da instituição deve aparecer no lugar de "
 
 ![MenuRaiz](assets/MenuObjetos.png)
 
-Terceiro menu da aplicação. O objeto em questão será visualizado de acordo com o que foi escolhido na tela anterior.
+Terceiro menu da aplicação. O objeto em questão será visualizado nas opções, de acordo com o que foi escolhido na tela anterior.
 
 1- Cadastra um novo objeto, a partir de uma chave primária. Se for passado um valor vazio ("" ou simplesmente ENTER no input da chave primária), a operação é cancelada.
 
 2- Pesquisa um objeto, a partir de uma chave primária. Se for passado um valor vazio ("" ou simplesmente ENTER no input da chave primária), a operação retorna todos os objetos registrados.
 
-3- Edita um objeto, a partir de uma chave primária. Se for passado um valor vazio ("" ou simplesmente ENTER no input da chave primária), significa que será utilizada a informação original, sem necessidade de reescrever nada.
+3- Edita um objeto, a partir de uma chave primária. Se for passado um valor vazio ("" ou simplesmente ENTER no input da chave primária), significa que será utilizada a informação original, sem necessidade de reescrever nada. Quando uma chave primária é alterada nas tabelas de Paciente, Médico e Instituição, o banco de dados de Consultas deve ser atualizado com essa alteração.
 
-4- Deleta um objeto, a partir de uma chave primária. Se for passado um valor vazio ("" ou simplesmente ENTER no input da chave primária), a operação é cancelada. Se for a operação tentar deletar a instituição que está "logada", a operação é cancelada.
+4- Deleta um objeto, a partir de uma chave primária. Se for passado um valor vazio ("" ou simplesmente ENTER no input da chave primária), a operação é cancelada. Se a operação tentar deletar a instituição que está "logada", a operação é cancelada.

@@ -30,7 +30,7 @@ class Interface:
         @staticmethod
         def loop_escolha(menu, referencia):
             escolha = input("Digite a opção desejada: ")
-            while escolha not in referencia:
+            while (escolha not in referencia) or (escolha == ""):
                 escolha = input("Digite uma opção válida: ")
 
             if (escolha == "0") and (menu == "raiz"):
@@ -486,6 +486,11 @@ class Interface:
                         print("--> Informe os novos valores ou deixe em branco para não alterar <--")
 
                         nova_chave = validar_cnpj()
+                        if (carregar(objeto, nova_chave) != None) and (nova_chave != chave_primaria):
+                            os.system("cls")
+                            print("--> Chave informada já consta no banco de dados <--")
+                            return "logado"
+                        
                         novo_nome = input("Informe o nome da instituição: ")
                         
                         if nova_chave == "":
@@ -607,6 +612,11 @@ class Interface:
                         print("-->Informe os novos valores ou deixe em branco para não alterar. <--")
 
                         nova_chave = validar_crm()
+                        if (carregar(objeto, nova_chave) != None) and (nova_chave != chave_primaria):
+                            os.system("cls")
+                            print("--> Chave informada já consta no banco de dados <--")
+                            return "logado"
+
                         novo_nome = input("Informe o nome do médico: ")
 
                         if nova_chave == "":
@@ -647,7 +657,11 @@ class Interface:
                         os.system("cls")
                         print("-->Informe os novos valores ou deixe em branco para não alterar. <--")
 
-                        nova_chave = validar_crm()
+                        nova_chave = validar_cpf()
+                        if (carregar(objeto, nova_chave) != None) and (nova_chave != chave_primaria):
+                            os.system("cls")
+                            print("--> Chave informada já consta no banco de dados <--")
+                            return "logado"
                         novo_nome = input("Informe o nome do paciente: ")
 
                         if nova_chave == "":

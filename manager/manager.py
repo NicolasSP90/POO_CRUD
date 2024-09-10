@@ -2,7 +2,10 @@
 import json
 import os
 
-#Variáveis
+# Objetos
+from objects.consulta import Consulta
+
+# Variáveis
 from env import path_current, path_data
 
 # Cria a pasta Data e os arquivos .json caso não existam
@@ -57,11 +60,24 @@ def carregar_entradas(objeto) -> int:
 
 # A partir de um objeto, edita o registro dele no banco de dados com os valores de um dicionário
 def editar(objeto, dicionario) -> object:
+    nome = str(type(objeto).__name__).lower()+".json"# retorna o nome da classe em minúsculo
+    
+    # Armazena a chave original para o caso de ser necessário atualizar os dados de consulta
+    if nome != "consulta.json":
+        chave_original = objeto.identificador
     deletar(objeto, objeto.identificador)
     objeto.identificador = list(dicionario.keys())[0]
-    print(objeto)
     objeto.importar = dicionario[objeto.identificador]
     cadastrar(objeto)
+
+    if nome != "consulta.json":
+        with open(os.path.join(path_data, "consulta.json"), "r", encoding="utf-8") as file:
+            dados = json.load(file)
+        for chave in dados:
+            if dados[chave][nome[:-5]] == chave_original:
+                dados[chave][nome[:-5]] = objeto.identificador
+        with open(os.path.join(path_data, "consulta.json"), "w", encoding="utf-8") as file: # Registra os dados
+            file.write(json.dumps(dados, indent=4, ensure_ascii=False))
     return objeto
 
 
