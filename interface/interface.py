@@ -472,12 +472,13 @@ class Interface:
                     return "logado"
                 
                 else:
-                    objeto = carregar(Instituicao(cnpj=chave_primaria), chave_primaria)
+                    objeto = Instituicao(cnpj=chave_primaria)
                     
                     # Verifica se está no banco de dados
                     if carregar(objeto, chave_primaria) == None:
                         os.system("cls")
                         print("--> Não consta no banco de dados <--")
+                        return "logado"
                     
                     # Para cada valor, informar um novo valor ou deixar em branco para manter o mesmo
                     else:
@@ -524,7 +525,9 @@ class Interface:
                     
                     # Verifica se está no banco de dados
                     if carregar(objeto, chave_primaria) == None:
+                        os.system("cls")
                         print("--> Não consta no banco de dados <--")
+                        return "logado"
 
                     # Para cada valor, informar um novo valor ou deixar em branco para manter o mesmo
 
@@ -594,7 +597,9 @@ class Interface:
 
                     # Verifica se está no banco de dados
                     if carregar(objeto, chave_primaria) == None:
-                        print("Não consta no banco de dados.")
+                        os.system("cls")
+                        print("--> Não consta no banco de dados <--")
+                        return "logado"
 
                     # Para cada valor, informar um novo valor ou deixar em branco para manter o mesmo
                     else:
@@ -633,7 +638,9 @@ class Interface:
                     
                     # Verifica se está no banco de dados
                     if carregar(objeto, chave_primaria) == None:
-                        print("Não consta no banco de dados.")
+                        os.system("cls")
+                        print("--> Não consta no banco de dados <--")
+                        return "logado"
 
                     # Para cada valor, informar um novo valor ou deixar em branco para manter o mesmo
                     else:
