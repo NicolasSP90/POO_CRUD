@@ -13,10 +13,14 @@ def inicializar_db():
     for dicionario in ["consulta.json", "instituicao.json", "medico.json", "paciente.json"]:
         if dicionario not in dicionarios:
             with open(os.path.join(path_data, dicionario), "w", encoding="utf-8") as file:
-
                 file.write(json.dumps(dict()))
-                file.close()
-
+            if dicionario == "instituicao.json":
+                with open(os.path.join(path_data, dicionario), "w", encoding="utf-8") as file:
+                    file.write(json.dumps(dict({"00.000.000/0000-00": {"nome": "Admin"}})))
+                    os.system("cls")
+                    print("--> Banco de dados inicializado <--")
+                    print("--> Faça login como admin - CNPJ: 00.000.000/0000-00 <--")
+                    
 
 # A partir de um objeto, cadastra ele no banco de dados
 def cadastrar(objeto):
@@ -39,6 +43,7 @@ def carregar(objeto, chave_primaria) -> object:
                 objeto.identificador = chave_primaria
                 objeto.importar = dados[chave_primaria]
                 return objeto
+    return None
 
 
 # A partir de um objeto, verifica quantos registros existem no banco de dados

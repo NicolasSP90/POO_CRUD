@@ -1,9 +1,7 @@
 {
     "1A.1A1.A1A/AA11-99":{ 
-        "nome": "Hosptal Ada Health", 
-        "medico":["Médico1", "Médico2"]}, 
+        "nome": "Hospital Ada Health"}, 
         
     "2A.2A2.A2A/AA22-99":{ 
-        "nome": "Hosptal Let's Health", 
-        "medico":["Médico3", "Médico4"]}
+        "nome": "Hospital Let's Health"}
 }

@@ -3,7 +3,7 @@ from objects.instituicao import Instituicao
 from objects.medico import Medico
 from objects.paciente import Paciente
 from objects.consulta import Consulta
-from manager.manager import cadastrar, carregar, carregar_entradas, editar, deletar
+from manager.manager import cadastrar, carregar, carregar_entradas, editar, deletar, inicializar_db
 
 # Biblioteca
 import os
@@ -95,6 +95,10 @@ class Interface:
 
         # Menu Raiz
         if tipo_menu == "raiz":
+
+            # Inicializando banco de dados
+            inicializar_db()
+
             print(f"""
                 ============={self.__nome}=============
                 1-Definir instituicao atual
@@ -110,6 +114,10 @@ class Interface:
             # Opção para fazer o login.
             if opcao == "1":
                 cnpj_login = validar_cnpj()
+
+                if cnpj_login == "":
+                    os.system("cls")
+                    return "raiz"
 
                 objeto_login = Instituicao(cnpj=cnpj_login)
 
@@ -435,6 +443,13 @@ class Interface:
                 chaves = carregar_entradas(objeto)
                 os.system("cls")
                 
+                if chaves == None:
+                    print("--> Sem cadastrado no banco de dados <--")
+                    if self.login == True:
+                        return "logado"
+                    else:
+                        return "raiz"
+
                 for i in chaves:
                     objeto = carregar(objeto, i)
                     print(objeto)
